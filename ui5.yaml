@@ -1,0 +1,7 @@
+specVersion: "3.2"
+metadata:
+  name: php_openui5
+type: application
+framework:
+  name: OpenUI5
+  version: "1.120.3"
