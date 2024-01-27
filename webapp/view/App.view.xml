@@ -1,27 +1,25 @@
 <!-- Declare Views Here -->
 <!-- .controller.App: Will search for file with App.controller prefix -->
 <mvc:View
-    controllerName="sap.ui.demo/walkthrough.controller.App"
+    controllerName="sap.ui.demo.walkthrough.controller.App"
     xmlns="sap.m"
-    xmlns:mvc="sap.ui.core.mvc">
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true">
+    <!-- <Shell>: Add Fiori background -->
+    <Shell>
+        <App class="myAppDemoWT">
+            <pages>
+                <Page title="{i18n>homePageTitle}">
+                    <content>
+                        <!-- Reference from external XML view file -->
+                        <mvc:XMLView
+                            viewName="sap.ui.demo.walkthrough.view.HelloPanel" />
+                    </content>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+
     <!-- Example: Display Text -->
     <!-- <Text text="Hello UI5 from xml view!" /> -->
-
-    <!-- 
-        press="METHOD_NAME" that is set in App.controller.js
-        text="value" OR text="{TRANSLATION_RESOURCE_PATH}" set at App.controller.js
-    -->
-    <Button text="{i18n>showHelloButtonText}" press=".onShowHello" />
-
-    <!-- 
-        value={} is available after set data at controller.
-        Format: variable = {recipient: {name: 'name here'}} => {/recipient/name}
-        valueLiveUpdate=true => Set value update in realtime
-    -->
-    <Input
-        value="{/recipient/name}"
-        description="Hello {/recipient/name}"
-        valueLiveUpdate="true"
-        width="60%"
-    />
 </mvc:View>

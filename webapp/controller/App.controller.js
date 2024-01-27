@@ -4,9 +4,9 @@
 sap.ui.define([
     // Import Modules/Resources/Assets
     "sap/ui/core/mvc/Controller",
-    "sap/m/MessageToast",
-    "sap/ui/model/json/JSONModel",
-    "sap/ui/model/resource/ResourceModel"
+    // "sap/m/MessageToast",
+    // "sap/ui/model/json/JSONModel",
+    // "sap/ui/model/resource/ResourceModel"
 ], function (Controller, MessageToast, JSONModel, ResourceModel) {
     "use strict" // use strict error detection
     /**
@@ -37,21 +37,22 @@ sap.ui.define([
         //     // Set model to view, setModel(VAR, "ALIAS")
         //     this.getView().setModel(i18nModel, "i18n");
         // },
-        
-        // Logic here
-        onShowHello: function () {
-            // -- Show a native or Vanilla JS alert
-            // alert("Hello there from button!");
 
-            // Read message from i18n model
-            var oBundle = this.getView().getModel("i18n").getResourceBundle();
-            // Get value from oData, Format: variable = {recipient: {name: 'name here'}} => {/recipient/name}
-            var sRecipient = this.getView().getModel().getProperty("/recipient/name");
-            // Set string that get value from i18n.properties file and set additional parameters in []
-            var sMsg = oBundle.getText("helloMsg", [sRecipient]);
-            
-            // Use Module/Resources from SAPUI5 Library
-            MessageToast.show(sMsg);
-        }
+        // Logic here
+        // Moved to HelloPanel.controller.js
+        // onShowHello: function () {
+        //     // -- Show a native or Vanilla JS alert
+        //     // alert("Hello there from button!");
+
+        //     // Read message from i18n model
+        //     var oBundle = this.getView().getModel("i18n").getResourceBundle();
+        //     // Get value from oData, Format: variable = {recipient: {name: 'name here'}} => {/recipient/name}
+        //     var sRecipient = this.getView().getModel().getProperty("/recipient/name");
+        //     // Set string that get value from i18n.properties file and set additional parameters in []
+        //     var sMsg = oBundle.getText("helloMsg", [sRecipient]);
+
+        //     // Use Module/Resources from SAPUI5 Library
+        //     MessageToast.show(sMsg);
+        // }
     });
 });

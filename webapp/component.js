@@ -10,12 +10,15 @@ sap.ui.define([
      */
     return UIComponent.extend("sap.ui.demo.walkthrough.Component", {
         metadata: {
-            rootView:  {
-                "viewName": "sap.ui.demo.walkthrough.view.App",
-                "type": "XML",
-                "async": true, // Set to run asynchronously
-                "id": "app"
-            }
+            // Not used becaused a changed during edit manifest.json & index.html
+            // rootView:  {
+            //     "viewName": "sap.ui.demo.walkthrough.view.App",
+            //     "type": "XML",
+            //     "async": true, // Set to run asynchronously
+            //     "id": "app"
+            // }
+
+            manifest: "json"
         },
         /**
          * NOTE:
@@ -37,14 +40,15 @@ sap.ui.define([
             // Set model to view
             this.setModel(oModel);
 
-            // Set i18n (Translation) model on view
-            var i18nModel = new ResourceModel({
-                bundleName: "sap.ui.demo.walkthrough.i18n.i18n",
-                supportedLocales: [""],
-                fallbackLocale: ""
-            });
-            // Set model to view, setModel(VAR, "ALIAS")
-            this.setModel(i18nModel, "i18n");
+            // Not used because already set in manifest.json
+            // // Set i18n (Translation) model on view
+            // var i18nModel = new ResourceModel({
+            //     bundleName: "sap.ui.demo.walkthrough.i18n.i18n",
+            //     supportedLocales: [""],
+            //     fallbackLocale: ""
+            // });
+            // // Set model to view, setModel(VAR, "ALIAS")
+            // this.setModel(i18nModel, "i18n");
         }
     })
 });
